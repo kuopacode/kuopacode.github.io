@@ -206,8 +206,10 @@ navbar:
       path: /archives 
       icon: fa-regular fa-archive # can be empty
     Categories:  # 新增分類
-      path: /categories
       icon: fa-regular fa-folder
+      submenus:
+        All Categories: /categories
+        Hexo: /categories/Hexo
     Tags:  # 新增標籤
       path: /tags
       icon: fa-regular fa-tags

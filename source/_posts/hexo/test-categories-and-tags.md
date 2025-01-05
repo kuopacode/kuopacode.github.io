@@ -2,10 +2,8 @@
 title: test-categories-and-tags
 date: 2025-01-05 14:33:20
 categories:
-  - Test
-  - Hexo
-    - Hexoo
-  - Test
+  - [Test]
+  - [Hexo, Hexooo]
 tags:
   - Hexo
 ---
