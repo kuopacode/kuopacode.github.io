@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/cat.png">
 <meta property="article:published_time" content="2025-01-05T06:33:20.000Z">
-<meta property="article:modified_time" content="2025-01-05T09:19:10.388Z">
+<meta property="article:modified_time" content="2025-01-12T13:01:00.888Z">
 <meta property="article:author" content="KuoPa">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -411,8 +411,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-01-05 17:19:10</span>
-            <span class="mobile">2025-01-05 17:19:10</span>
+            <span class="desktop">2025-01-12 21:01</span>
+            <span class="mobile">2025-01-12 21:01</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -536,33 +536,44 @@
 
         
             
-    <div id="waline"></div>
-    <script type="module" data-swup-reload-script>
-      import { init } from '/js/libs/waline.mjs';
-
-      function loadWaline() {
-        init({
-          el: '#waline',
-          serverURL: 'https://example.example.com',
-          lang: 'en-US',
-          dark: 'body[class~="dark-mode"]',
-          reaction: false,
-          requiredMeta: ['nick', 'mail'],
-          emoji: [],
-          
-          
-        });
-      }
-
-      if (typeof swup !== 'undefined') {
-        loadWaline();
-      } else {
-        window.addEventListener('DOMContentLoaded', loadWaline);
-      }
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'kuopacode/kuopacode.github.io',
+                'data-repo-id': 'R_kgDONl149w',
+                'data-category': 'Comments',
+                'data-category-id': 'DIC_kwDONl14984Cl8l3',
+                'data-mapping': 'pathname',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'en',
+                'data-input-position': 'bottom',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
     </script>
 
 
-
+        
         
     
 </div>
